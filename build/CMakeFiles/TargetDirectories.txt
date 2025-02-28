@@ -1,0 +1,3 @@
+D:/hello/build/CMakeFiles/main.dir
+D:/hello/build/CMakeFiles/edit_cache.dir
+D:/hello/build/CMakeFiles/rebuild_cache.dir
