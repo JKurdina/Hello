@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named calculator
+
+# Build rule for target.
+calculator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 calculator
+.PHONY : calculator
+
+# fast build rule for target.
+calculator/fast:
+	$(MAKE) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/build
+.PHONY : calculator/fast
+
+#=============================================================================
 # Target rules for targets named http_server
 
 # Build rule for target.
@@ -122,6 +135,33 @@ http_server: cmake_check_build_system
 http_server/fast:
 	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/build
 .PHONY : http_server/fast
+
+calculator.o: calculator.cpp.o
+
+.PHONY : calculator.o
+
+# target to build an object file
+calculator.cpp.o:
+	$(MAKE) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/calculator.cpp.o
+.PHONY : calculator.cpp.o
+
+calculator.i: calculator.cpp.i
+
+.PHONY : calculator.i
+
+# target to preprocess a source file
+calculator.cpp.i:
+	$(MAKE) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/calculator.cpp.i
+.PHONY : calculator.cpp.i
+
+calculator.s: calculator.cpp.s
+
+.PHONY : calculator.s
+
+# target to generate assembly for a file
+calculator.cpp.s:
+	$(MAKE) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/calculator.cpp.s
+.PHONY : calculator.cpp.s
 
 http_server.o: http_server.cpp.o
 
@@ -157,8 +197,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... calculator"
 	@echo "... edit_cache"
 	@echo "... http_server"
+	@echo "... calculator.o"
+	@echo "... calculator.i"
+	@echo "... calculator.s"
 	@echo "... http_server.o"
 	@echo "... http_server.i"
 	@echo "... http_server.s"
