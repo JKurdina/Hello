@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
 int main(){
-    cout << "Hello Docker and Julia and VS code!!! Nice)"<<endl;
+    cout << "Hello Docker!!!"<<endl;
     return 0;
 }

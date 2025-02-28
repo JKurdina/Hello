@@ -1,5 +1,10 @@
-cmake_minimum_required(VERSION 2.8) # Проверка версии CMake.
+cmake_minimum_required(VERSION 2.8)
 project(hello)
 
-add_executable(main main.cpp)		# Создает исполняемый файл с именем main
-									# из исходника main.cpp
+find_package(Boost REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+
+add_executable(http_server http_server.cpp)
+target_link_libraries(http_server Boost::boost)
+target_link_libraries(http_server Boost::boost pthread)
+
